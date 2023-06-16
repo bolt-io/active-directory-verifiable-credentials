@@ -1,12 +1,12 @@
 ﻿<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" 
-TenantId="yourtenant.onmicrosoft.com" 
+TenantId="dee2c.onmicrosoft.com" 
 PolicyId="B2C_1A_TrustFrameworkExtensionsVC" 
-PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensionsVC" 
+PublicPolicyUri="http://dee2c.onmicrosoft.com/B2C_1A_TrustFrameworkExtensionsVC" 
 >
   <!-- This policy file inherits from an already deployed version of trustFrameworkExtensions in the Starter Pack -->
   <BasePolicy>
-    <TenantId>yourtenant.onmicrosoft.com</TenantId>
-    <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
+    <TenantId>dee2c.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_TrustFrameworkExtensionsDisplayControls</PolicyId>
   </BasePolicy>
 
   <BuildingBlocks>
@@ -64,7 +64,7 @@ PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensio
       <!-- pages uses custom html -->
       <ContentDefinition Id="api.selfasserted.vc">
         <!-- CHANGE THE BELOW LINE -->
-        <LoadUri>https://yourstorageaccount.blob.core.windows.net/b2cux/selfAsserted.html</LoadUri>
+        <LoadUri>https://boltid.blob.core.windows.net/b2c-vc-templates/selfAsserted.html</LoadUri>
         <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
         <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:2.1.0</DataUri>
         <Metadata>
@@ -104,7 +104,8 @@ PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensio
             <InputClaim ClaimTypeReferenceId="VCStateId" />
             <!-- if you change this one, you need to change the ServiceUrl for the REST API below -->
             <!-- CHANGE THE BELOW LINE -->
-            <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://df4a-158-174-131-118.ngrok.io/api/verifier"/>
+            <!-- <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://df4a-158-174-131-118.ngrok.io/api/verifier"/> -->
+            <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://bolt-id.co.uk/api/verifier/presentation-request"/>
           </InputClaims>
           <DisplayClaims>
             <DisplayClaim ClaimTypeReferenceId="VCStateId" />
@@ -141,7 +142,8 @@ PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensio
             <InputClaim ClaimTypeReferenceId="VCStateId" />
             <!-- if you change this one, you need to change the ServiceUrl for the REST API below -->
             <!-- CHANGE THE BELOW LINE -->
-            <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://df4a-158-174-131-118.ngrok.io/api/verifier"/>
+            <!-- <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://df4a-158-174-131-118.ngrok.io/api/verifier"/> -->
+            <InputClaim ClaimTypeReferenceId="VCServiceUrl" AlwaysUseDefaultValue="true" DefaultValue="https://bolt-id.co.uk/api/verifier"/>
           </InputClaims>
           <DisplayClaims>
             <DisplayClaim ClaimTypeReferenceId="VCStateId" />
@@ -178,7 +180,8 @@ PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensio
           <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
           <Metadata>
             <!-- CHANGE THE BELOW LINE -->
-            <Item Key="ServiceUrl">https://df4a-158-174-131-118.ngrok.io/api/verifier/presentation-response-b2c</Item>
+            <!-- <Item Key="ServiceUrl">https://df4a-158-174-131-118.ngrok.io/api/verifier/presentation-response-b2c</Item> -->
+            <Item Key="ServiceUrl">https://bolt-id.co.uk/api/verifier/presentation-response</Item>
             <Item Key="AuthenticationType">None</Item>
             <Item Key="SendClaimsIn">Body</Item>
           </Metadata>
